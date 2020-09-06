@@ -8,4 +8,4 @@ services:
 
   db:
     image: "mongo:latest"
-		container_name: "instly-mongodb"
+    container_name: "instly-mongodb"
