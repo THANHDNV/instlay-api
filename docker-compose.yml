@@ -1,11 +1,11 @@
 version: "3"
 services:
-  web:
-    build: .
-    ports:
-      - ${PORT}:3000
-    container_name: "instly-be"
-
   db:
     image: "mongo:latest"
-    container_name: "instly-mongodb"
+		container_name: "instly-mongodb"
+		restart: always
+		ports:
+			- ${MONGODB_PORT:-27017}:"27017"
+		environment:
+			MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USERNAME}
+			MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWORD}
